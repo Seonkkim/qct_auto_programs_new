@@ -1,0 +1,187 @@
+2021-06-08 10:18:41.054+0900 FINE t1 Executor.registerErrorHandler: Installing default uncaught exception handler
+2021-06-08 10:18:41.705+0900 INFO t1 Indexer.parseOptions: Indexer options: [-c, /usr/local/bin/ctags, -s, /local2/mnt/opengrok/src, -d, /local2/mnt/opengrok/data, -P, -S, -G, -W, /local2/mnt/opengrok/etc/configuration.xml, -U, https://automotive-linux:7070/source]
+2021-06-08 10:18:42.027+0900 FINER t1 ReflectionHelper$2.run: Unable to load class org.osgi.framework.BundleReference using the current class loader.
+java.lang.ClassNotFoundException: org.osgi.framework.BundleReference
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:315)
+	at org.glassfish.jersey.internal.util.ReflectionHelper$2.run(ReflectionHelper.java:244)
+	at org.glassfish.jersey.internal.util.ReflectionHelper$2.run(ReflectionHelper.java:229)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.glassfish.jersey.internal.util.ReflectionHelper.<clinit>(ReflectionHelper.java:1470)
+	at org.glassfish.jersey.internal.ServiceFinder.<clinit>(ServiceFinder.java:142)
+	at org.glassfish.jersey.client.ClientConfig$State.<init>(ClientConfig.java:142)
+	at org.glassfish.jersey.client.ClientConfig.<init>(ClientConfig.java:496)
+	at org.glassfish.jersey.client.JerseyClientBuilder.<init>(JerseyClientBuilder.java:74)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at javax.ws.rs.client.FactoryFinder.newInstance(FactoryFinder.java:90)
+	at javax.ws.rs.client.FactoryFinder.find(FactoryFinder.java:185)
+	at javax.ws.rs.client.ClientBuilder.newBuilder(ClientBuilder.java:67)
+	at javax.ws.rs.client.ClientBuilder.newClient(ClientBuilder.java:94)
+	at org.opengrok.indexer.index.IndexerUtil.enableProjects(IndexerUtil.java:53)
+	at org.opengrok.indexer.index.Indexer.main(Indexer.java:335)
+
+2021-06-08 10:18:42.031+0900 CONFIG t1 ServiceFinder.<clinit>: Running in a non-OSGi environment
+2021-06-08 10:18:42.111+0900 FINEST t1 ServiceFinder$LazyObjectIterator.next: Loading next object: org.glassfish.jersey.inject.hk2.Hk2InjectionManagerFactory
+2021-06-08 10:18:42.138+0900 FINER t1 Logger.debug: Created ServiceLocator ServiceLocatorImpl(__HK2_Generated_0,0,1954471782)
+2021-06-08 10:18:42.225+0900 FINE t1 AbstractHk2InjectionManager.<init>: Clearing Jersey HK2 caches. Service cache size: 3, reflection cache size: 20.
+2021-06-08 10:18:42.292+0900 FINEST t1 ServiceFinder$LazyClassIterator.next: Loading next class: org.glassfish.jersey.logging.LoggingFeatureAutoDiscoverable
+2021-06-08 10:18:42.293+0900 FINEST t1 ServiceFinder$LazyClassIterator.next: Loading next class: org.glassfish.jersey.internal.config.ExternalPropertiesAutoDiscoverable
+2021-06-08 10:18:42.294+0900 FINEST t1 ServiceFinder$LazyClassIterator.next: Loading next class: org.glassfish.jersey.server.filter.internal.ServerFiltersAutoDiscoverable
+2021-06-08 10:18:42.295+0900 FINEST t1 ServiceFinder$LazyClassIterator.next: Loading next class: org.glassfish.jersey.jackson.internal.JacksonAutoDiscoverable
+2021-06-08 10:18:42.310+0900 FINEST t1 ServiceFinder$LazyClassIterator.next: Loading next class: org.glassfish.jersey.server.validation.internal.ValidationAutoDiscoverable
+2021-06-08 10:18:42.324+0900 FINEST t1 ServiceFinder$LazyClassIterator.next: Loading next class: org.glassfish.jersey.server.wadl.internal.WadlAutoDiscoverable
+2021-06-08 10:18:42.326+0900 FINEST t1 ServiceFinder$LazyClassIterator.next: Loading next class: org.glassfish.jersey.server.internal.monitoring.MonitoringAutodiscoverable
+2021-06-08 10:18:42.329+0900 FINEST t1 ServiceFinder$LazyClassIterator.next: Loading next class: org.glassfish.jersey.jaxb.internal.JaxbAutoDiscoverable
+2021-06-08 10:18:42.387+0900 FINER t1 SystemPropertiesConfigurationModel.getProperties: System properties configuration provider not allowed
+2021-06-08 10:18:42.470+0900 FINE t1 ClientExecutorProvidersConfigurator.lookupManagedExecutorService: null
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.glassfish.jersey.client.ClientExecutorProvidersConfigurator.lookupManagedExecutorService(ClientExecutorProvidersConfigurator.java:152)
+	at org.glassfish.jersey.client.ClientExecutorProvidersConfigurator.<clinit>(ClientExecutorProvidersConfigurator.java:49)
+	at org.glassfish.jersey.client.ClientConfig$State.initRuntime(ClientConfig.java:442)
+	at org.glassfish.jersey.internal.util.collection.Values$LazyValueImpl.get(Values.java:317)
+	at org.glassfish.jersey.client.ClientConfig.getRuntime(ClientConfig.java:807)
+	at org.glassfish.jersey.client.ClientRequest.getClientRuntime(ClientRequest.java:219)
+	at org.glassfish.jersey.client.ClientRequest.getInjectionManager(ClientRequest.java:610)
+	at org.glassfish.jersey.client.JerseyWebTarget.onBuilder(JerseyWebTarget.java:364)
+	at org.glassfish.jersey.client.JerseyWebTarget.request(JerseyWebTarget.java:192)
+	at org.glassfish.jersey.client.JerseyWebTarget.request(JerseyWebTarget.java:36)
+	at org.opengrok.indexer.index.IndexerUtil.enableProjects(IndexerUtil.java:59)
+	at org.opengrok.indexer.index.Indexer.main(Indexer.java:335)
+Caused by: javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+	at java.naming/javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:685)
+	at java.naming/javax.naming.InitialContext.getDefaultInitCtx(InitialContext.java:305)
+	at java.naming/javax.naming.InitialContext.getURLOrDefaultInitCtx(InitialContext.java:342)
+	at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
+	... 16 more
+
+2021-06-08 10:18:42.504+0900 FINE t1 ClientExecutorProvidersConfigurator.lookupManagedScheduledExecutorService: null
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.glassfish.jersey.client.ClientExecutorProvidersConfigurator.lookupManagedScheduledExecutorService(ClientExecutorProvidersConfigurator.java:174)
+	at org.glassfish.jersey.client.ClientExecutorProvidersConfigurator.init(ClientExecutorProvidersConfigurator.java:124)
+	at org.glassfish.jersey.client.ClientConfig$State.initRuntime(ClientConfig.java:447)
+	at org.glassfish.jersey.internal.util.collection.Values$LazyValueImpl.get(Values.java:317)
+	at org.glassfish.jersey.client.ClientConfig.getRuntime(ClientConfig.java:807)
+	at org.glassfish.jersey.client.ClientRequest.getClientRuntime(ClientRequest.java:219)
+	at org.glassfish.jersey.client.ClientRequest.getInjectionManager(ClientRequest.java:610)
+	at org.glassfish.jersey.client.JerseyWebTarget.onBuilder(JerseyWebTarget.java:364)
+	at org.glassfish.jersey.client.JerseyWebTarget.request(JerseyWebTarget.java:192)
+	at org.glassfish.jersey.client.JerseyWebTarget.request(JerseyWebTarget.java:36)
+	at org.opengrok.indexer.index.IndexerUtil.enableProjects(IndexerUtil.java:59)
+	at org.opengrok.indexer.index.Indexer.main(Indexer.java:335)
+Caused by: javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+	at java.naming/javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:685)
+	at java.naming/javax.naming.InitialContext.getDefaultInitCtx(InitialContext.java:305)
+	at java.naming/javax.naming.InitialContext.getURLOrDefaultInitCtx(InitialContext.java:342)
+	at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
+	... 16 more
+
+2021-06-08 10:18:42.515+0900 CONFIG t1 ExtendedLogger.config: Selected ExecutorServiceProvider implementation [org.glassfish.jersey.client.DefaultClientAsyncExecutorProvider] to be used for injection of executor qualified by [org.glassfish.jersey.client.ClientAsyncExecutor] annotation.
+2021-06-08 10:18:42.517+0900 CONFIG t1 ExtendedLogger.config: Selected ScheduledExecutorServiceProvider implementation [org.glassfish.jersey.client.DefaultClientBackgroundSchedulerProvider] to be used for injection of scheduler qualified by [org.glassfish.jersey.client.ClientBackgroundScheduler] annotation.
+2021-06-08 10:18:42.628+0900 CONFIG t1 HttpUrlConnector.<init>: Restricted headers are not enabled using [sun.net.http.allowRestrictedHeaders] system property (setting only takes effect on connections created after the property has been set/changed).
+2021-06-08 10:18:43.485+0900 FINEST t1 HttpURLConnection.plainConnect0: ProxySelector Request for https://automotive-linux:7070/source/api/v1/configuration/projectsEnabled
+2021-06-08 10:18:43.489+0900 FINEST t1 HttpsClient.New: Looking for HttpClient for URL https://automotive-linux:7070/source/api/v1/configuration/projectsEnabled and proxy value of DIRECT
+2021-06-08 10:18:43.490+0900 FINEST t1 HttpsClient.<init>: Creating new HttpsClient with url:https://automotive-linux:7070/source/api/v1/configuration/projectsEnabled and proxy:DIRECT with connect timeout:0
+2021-06-08 10:18:44.685+0900 FINEST t1 HttpURLConnection.plainConnect0: Proxy used: DIRECT
+2021-06-08 10:18:45.091+0900 FINEST t1 ExtendedLogger.debugLog: [DEBUG] Released scope instance Instance{id=a71cecaa-e67f-4e87-a803-324c12edeb1e, referenceCounter=0, store size=0} on thread main
+2021-06-08 10:18:45.093+0900 SEVERE t1 Indexer.main: Couldn't notify the webapp on https://automotive-linux:7070/source.
+javax.ws.rs.ProcessingException: javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:261)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:296)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$1(JerseyInvocation.java:623)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:390)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:621)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:404)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.get(JerseyInvocation.java:300)
+	at org.opengrok.indexer.index.IndexerUtil.enableProjects(IndexerUtil.java:60)
+	at org.opengrok.indexer.index.Indexer.main(Indexer.java:335)
+Caused by: javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:128)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:321)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:264)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:259)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.checkServerCerts(CertificateMessage.java:1329)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.onConsumeCertificate(CertificateMessage.java:1204)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.consume(CertificateMessage.java:1151)
+	at java.base/sun.security.ssl.SSLHandshake.consume(SSLHandshake.java:392)
+	at java.base/sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:444)
+	at java.base/sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:421)
+	at java.base/sun.security.ssl.TransportContext.dispatch(TransportContext.java:178)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:164)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1152)
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1063)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:402)
+	at java.base/sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:567)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1581)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1509)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:329)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector._apply(HttpUrlConnector.java:367)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:259)
+	... 11 more
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at java.base/sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:385)
+	at java.base/sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:290)
+	at java.base/sun.security.validator.Validator.validate(Validator.java:264)
+	at java.base/sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:321)
+	at java.base/sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:221)
+	at java.base/sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:129)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.checkServerCerts(CertificateMessage.java:1313)
+	... 29 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at java.base/sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141)
+	at java.base/sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126)
+	at java.base/java.security.cert.CertPathBuilder.build(CertPathBuilder.java:297)
+	at java.base/sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:380)
+	... 35 more
+
+2021-06-08 10:18:45.096+0900 INFO t1 Indexer.main: Indexer version 1.5.11 (ecb835e51b5e71d0c9046b7924aec2d75cd5016b) running on Java 11.0.2
+2021-06-08 10:18:45.125+0900 FINE t1 Executor.exec: Executing command [/usr/local/bin/ctags --version] in directory /local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update with environment: {PATH=/usr/lib/jvm/java-11-openjdk-amd64//bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-11-openjdk-amd64//bin, XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop, JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/, TERM=xterm, LANG=en_US.UTF-8, XDG_SESSION_ID=607, P4CONFIG=.p4config, DISPLAY=localhost:12.0, MAIL=/var/mail/seonkim, LOGNAME=seonkim, PWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update, _=/usr/lib/jvm/java-11-openjdk-amd64//bin/java, LANGUAGE=en_US:, OPENGROK_TOMCAT_BASE=/usr/local/tomcat, NVM_CD_FLAGS=, P4PORT=qctp401:1666, NVM_DIR=/usr2/seonkim/.nvm, SHELL=/bin/bash, P4USER=seonkim, SSH_TTY=/dev/pts/10, SSH_CLIENT=10.240.65.175 49771 22, CATALINA_HOME=/usr/local/tomcat, OLDPWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload, USER=seonkim, CLASS_PATH=/usr/lib/jvm/java-11-openjdk-amd64//lib:, SSH_CONNECTION=10.240.65.175 49771 10.240.65.34 22, QT_QPA_PLATFORMTHEME=appmenu-qt5, PYTHONHTTPSVERIFY=0, XDG_RUNTIME_DIR=/run/user/3835720, NVM_BIN=/usr2/seonkim/.nvm/versions/node/v14.16.1/bin, HOME=/usr2/seonkim, SHLVL=1}
+2021-06-08 10:18:45.461+0900 FINE t1 Statistics.logIt: Finished command [/usr/local/bin/ctags --version] in directory /local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update with exit code 0 (took 326 ms)
+2021-06-08 10:18:45.462+0900 FINE t1 Executor.exec: Finished command [/usr/local/bin/ctags --version] in directory /local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update with exit code 0
+2021-06-08 10:18:45.463+0900 INFO t1 CtagsUtil.validate: Using ctags: Universal Ctags 5.9.0(2bb81c8), Copyright (C) 2015 Universal Ctags Team
+Universal Ctags is derived from Exuberant Ctags.
+Exuberant Ctags 5.8, Copyright (C) 1996-2009 Darren Hiebert
+  Compiled: May 17 2021, 14:12:56
+  URL: https://ctags.io/
+  Optional compiled features: +wildcards, +regex, +iconv, +option-directory, +packcc, +optscript
+2021-06-08 10:18:45.464+0900 FINE t1 Executor.exec: Executing command [/usr/local/bin/ctags --list-languages] in directory /local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update with environment: {PATH=/usr/lib/jvm/java-11-openjdk-amd64//bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-11-openjdk-amd64//bin, XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop, JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/, TERM=xterm, LANG=en_US.UTF-8, XDG_SESSION_ID=607, P4CONFIG=.p4config, DISPLAY=localhost:12.0, MAIL=/var/mail/seonkim, LOGNAME=seonkim, PWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update, _=/usr/lib/jvm/java-11-openjdk-amd64//bin/java, LANGUAGE=en_US:, OPENGROK_TOMCAT_BASE=/usr/local/tomcat, NVM_CD_FLAGS=, P4PORT=qctp401:1666, NVM_DIR=/usr2/seonkim/.nvm, SHELL=/bin/bash, P4USER=seonkim, SSH_TTY=/dev/pts/10, SSH_CLIENT=10.240.65.175 49771 22, CATALINA_HOME=/usr/local/tomcat, OLDPWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload, USER=seonkim, CLASS_PATH=/usr/lib/jvm/java-11-openjdk-amd64//lib:, SSH_CONNECTION=10.240.65.175 49771 10.240.65.34 22, QT_QPA_PLATFORMTHEME=appmenu-qt5, PYTHONHTTPSVERIFY=0, XDG_RUNTIME_DIR=/run/user/3835720, NVM_BIN=/usr2/seonkim/.nvm/versions/node/v14.16.1/bin, HOME=/usr2/seonkim, SHLVL=1}
+2021-06-08 10:18:45.467+0900 FINE t1 Statistics.logIt: Finished command [/usr/local/bin/ctags --list-languages] in directory /local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update with exit code 0 (took 1 ms)
+2021-06-08 10:18:45.468+0900 FINE t1 Executor.exec: Finished command [/usr/local/bin/ctags --list-languages] in directory /local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update with exit code 0
+2021-06-08 10:18:45.512+0900 INFO t1 Indexer.prepareIndexer: Scanning for repositories in [/local2/mnt/opengrok/src/QXA.QA.4.0.c3-00165-MSM8996.HYP.PVM.700-1, /local2/mnt/opengrok/src/QXA.QA.3.0.c2-00453-APQ8996.NTO.700-1, /local2/mnt/opengrok/src/LA.HB.1.1.8.c2-01400-8x96.0-1, /local2/mnt/opengrok/src/LV.HB.1.1.3-05610-8x96_QX_HYP.0-1, /local2/mnt/opengrok/src/QXA.QA.3.0.c2-00503-APQ8996.NTO.700-1, /local2/mnt/opengrok/src/LA.HB.1.1.8.c2-03700-8x96.0-1, /local2/mnt/opengrok/src/LV.HB.1.1.4-08710-8x96.0-1, /local2/mnt/opengrok/src/QXA.QA.4.0.c5-00103-MSM8996.HYP.PVM.700-2, /local2/mnt/opengrok/src/LE.UM.2.3.6-02500-9x07-3, /local2/mnt/opengrok/src/QXA.QA.4.0.c2-00250-MSM8996.HYP.PVM.700-1, /local2/mnt/opengrok/src/LE.UM.2.3.6-09000-9x07-1, /local2/mnt/opengrok/src/LA.HB.1.1.8.c2-06500-8x96.0-1, /local2/mnt/opengrok/src/LNX.LE.5.3.2.2-88134-9x40-3, /local2/mnt/opengrok/src/LV.HB.1.1.6-07010-8x96.0-1, /local2/mnt/opengrok/src/LA.HB.1.1.8-05710-8x96.0-1, /local2/mnt/opengrok/src/QXA.QA.4.0.c2-00294-MSM8996.HYP.PVM.700-1, /local2/mnt/opengrok/src/LNX.LE.5.3.2.2-88114-9x40-3, /local2/mnt/opengrok/src/LA.HB.1.1.8-05410-8x96.0-1, /local2/mnt/opengrok/src/LV.HB.1.1.6-05410-8x96.0-1, /local2/mnt/opengrok/src/LV.HB.1.1.3-05810-8x96_QX_HYP.0-1, /local2/mnt/opengrok/src/QXA.QA.4.0.c2-00224-MSM8996.HYP.PVM.700-1, /local2/mnt/opengrok/src/LV.HB.1.1.1-35310-8x96.0-1, /local2/mnt/opengrok/src/QXA.QA.4.0.c3-00128-MSM8996.HYP.PVM.700-1, /local2/mnt/opengrok/src/QXA.QA.3.0.c2-00429-APQ8996.NTO.700-1, /local2/mnt/opengrok/src/LV.HB.1.1.3-07310-8x96_QX_HYP.0-2, /local2/mnt/opengrok/src/LE.UM.1.3.2.r1-04000-9x50-1, /local2/mnt/opengrok/src/LV.HB.1.1.6-06310-8x96.0-1, /local2/mnt/opengrok/src/LA.HB.1.1.8-05910-8x96.0-1, /local2/mnt/opengrok/src/LV.HB.1.1.1-39210-8x96.0-1, /local2/mnt/opengrok/src/LNX.LE.5.3.2.2-88136-9x40-3, /local2/mnt/opengrok/src/LV.HB.1.1.1-36610-8x96.0-1, /local2/mnt/opengrok/src/QXA.QA.4.0.c3-00143-MSM8996.HYP.PVM.700-1, /local2/mnt/opengrok/src/LV.HB.1.1.3-08710-8x96.0-1, /local2/mnt/opengrok/src/LV.HB.1.1.4-09010-8x96.0-1]...
+2021-06-08 10:18:45.545+0900 FINE t25 Executor.exec: Executing command [accurev info] in directory /local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update with environment: {PATH=/usr/lib/jvm/java-11-openjdk-amd64//bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-11-openjdk-amd64//bin, XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop, JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/, TERM=xterm, LANG=en_US.UTF-8, XDG_SESSION_ID=607, P4CONFIG=.p4config, DISPLAY=localhost:12.0, MAIL=/var/mail/seonkim, LOGNAME=seonkim, PWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update, _=/usr/lib/jvm/java-11-openjdk-amd64//bin/java, LANGUAGE=en_US:, OPENGROK_TOMCAT_BASE=/usr/local/tomcat, NVM_CD_FLAGS=, P4PORT=qctp401:1666, NVM_DIR=/usr2/seonkim/.nvm, SHELL=/bin/bash, P4USER=seonkim, SSH_TTY=/dev/pts/10, SSH_CLIENT=10.240.65.175 49771 22, CATALINA_HOME=/usr/local/tomcat, OLDPWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload, USER=seonkim, CLASS_PATH=/usr/lib/jvm/java-11-openjdk-amd64//lib:, SSH_CONNECTION=10.240.65.175 49771 10.240.65.34 22, QT_QPA_PLATFORMTHEME=appmenu-qt5, PYTHONHTTPSVERIFY=0, XDG_RUNTIME_DIR=/run/user/3835720, NVM_BIN=/usr2/seonkim/.nvm/versions/node/v14.16.1/bin, HOME=/usr2/seonkim, SHLVL=1}
+2021-06-08 10:18:45.547+0900 FINE t25 Executor.exec: Executing command [cleartool -version] in directory /local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update with environment: {PATH=/usr/lib/jvm/java-11-openjdk-amd64//bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-11-openjdk-amd64//bin, XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop, JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/, TERM=xterm, LANG=en_US.UTF-8, XDG_SESSION_ID=607, P4CONFIG=.p4config, DISPLAY=localhost:12.0, MAIL=/var/mail/seonkim, LOGNAME=seonkim, PWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update, _=/usr/lib/jvm/java-11-openjdk-amd64//bin/java, LANGUAGE=en_US:, OPENGROK_TOMCAT_BASE=/usr/local/tomcat, NVM_CD_FLAGS=, P4PORT=qctp401:1666, NVM_DIR=/usr2/seonkim/.nvm, SHELL=/bin/bash, P4USER=seonkim, SSH_TTY=/dev/pts/10, SSH_CLIENT=10.240.65.175 49771 22, CATALINA_HOME=/usr/local/tomcat, OLDPWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload, USER=seonkim, CLASS_PATH=/usr/lib/jvm/java-11-openjdk-amd64//lib:, SSH_CONNECTION=10.240.65.175 49771 10.240.65.34 22, QT_QPA_PLATFORMTHEME=appmenu-qt5, PYTHONHTTPSVERIFY=0, XDG_RUNTIME_DIR=/run/user/3835720, NVM_BIN=/usr2/seonkim/.nvm/versions/node/v14.16.1/bin, HOME=/usr2/seonkim, SHLVL=1}
+2021-06-08 10:18:45.548+0900 FINE t25 Executor.exec: Executing command [p4 help] in directory /local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update with environment: {PATH=/usr/lib/jvm/java-11-openjdk-amd64//bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-11-openjdk-amd64//bin, XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop, JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/, TERM=xterm, LANG=en_US.UTF-8, XDG_SESSION_ID=607, P4CONFIG=.p4config, DISPLAY=localhost:12.0, MAIL=/var/mail/seonkim, LOGNAME=seonkim, PWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update, _=/usr/lib/jvm/java-11-openjdk-amd64//bin/java, LANGUAGE=en_US:, OPENGROK_TOMCAT_BASE=/usr/local/tomcat, NVM_CD_FLAGS=, P4PORT=qctp401:1666, NVM_DIR=/usr2/seonkim/.nvm, SHELL=/bin/bash, P4USER=seonkim, SSH_TTY=/dev/pts/10, SSH_CLIENT=10.240.65.175 49771 22, CATALINA_HOME=/usr/local/tomcat, OLDPWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload, USER=seonkim, CLASS_PATH=/usr/lib/jvm/java-11-openjdk-amd64//lib:, SSH_CONNECTION=10.240.65.175 49771 10.240.65.34 22, QT_QPA_PLATFORMTHEME=appmenu-qt5, PYTHONHTTPSVERIFY=0, XDG_RUNTIME_DIR=/run/user/3835720, NVM_BIN=/usr2/seonkim/.nvm/versions/node/v14.16.1/bin, HOME=/usr2/seonkim, SHLVL=1}
+2021-06-08 10:18:45.655+0900 CONFIG t21 HistoryGuru.addRepositories: Adding <org.opengrok.indexer.history.RepoRepository> repository: </local2/mnt/opengrok/src/LV.HB.1.1.3-05610-8x96_QX_HYP.0-1>
+2021-06-08 10:18:45.658+0900 CONFIG t24 HistoryGuru.addRepositories: Adding <org.opengrok.indexer.history.RepoRepository> repository: </local2/mnt/opengrok/src/LV.HB.1.1.4-08710-8x96.0-1>
+2021-06-08 10:18:45.898+0900 FINE t24 Executor.exec: Executing command [git --version] in directory /local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update with environment: {PATH=/usr/lib/jvm/java-11-openjdk-amd64//bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-11-openjdk-amd64//bin, XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop, JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/, TERM=xterm, LANG=en_US.UTF-8, XDG_SESSION_ID=607, P4CONFIG=.p4config, DISPLAY=localhost:12.0, MAIL=/var/mail/seonkim, LOGNAME=seonkim, PWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update, _=/usr/lib/jvm/java-11-openjdk-amd64//bin/java, LANGUAGE=en_US:, OPENGROK_TOMCAT_BASE=/usr/local/tomcat, NVM_CD_FLAGS=, P4PORT=qctp401:1666, NVM_DIR=/usr2/seonkim/.nvm, SHELL=/bin/bash, P4USER=seonkim, SSH_TTY=/dev/pts/10, SSH_CLIENT=10.240.65.175 49771 22, CATALINA_HOME=/usr/local/tomcat, OLDPWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload, USER=seonkim, CLASS_PATH=/usr/lib/jvm/java-11-openjdk-amd64//lib:, SSH_CONNECTION=10.240.65.175 49771 10.240.65.34 22, QT_QPA_PLATFORMTHEME=appmenu-qt5, PYTHONHTTPSVERIFY=0, XDG_RUNTIME_DIR=/run/user/3835720, NVM_BIN=/usr2/seonkim/.nvm/versions/node/v14.16.1/bin, HOME=/usr2/seonkim, SHLVL=1}
+2021-06-08 10:18:45.948+0900 FINE t24 Statistics.logIt: Finished command [git --version] in directory /local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update with exit code 0 (took 49 ms)
+2021-06-08 10:18:45.949+0900 FINE t24 Executor.exec: Finished command [git --version] in directory /local2/mnt/qct_auto_programs/opengrok_auto_upload/opengrok_update with exit code 0
+2021-06-08 10:18:45.951+0900 FINE t24 Executor.exec: Executing command [git remote -v] in directory /local2/mnt/opengrok/src/LV.HB.1.1.4-08710-8x96.0-1/mcm-api with environment: {PATH=/usr/lib/jvm/java-11-openjdk-amd64//bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-11-openjdk-amd64//bin, XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop, JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/, TERM=xterm, LANG=en_US.UTF-8, XDG_SESSION_ID=607, P4CONFIG=.p4config, DISPLAY=localhost:12.0, MAIL=/var/mail/seonkim, LOGNAME=seonkim, PWD=/local2/mnt/opengrok/src/LV.HB.1.1.4-08710-8x96.0-1/mcm-api, _=/usr/lib/jvm/java-11-openjdk-amd64//bin/java, LANGUAGE=en_US:, OPENGROK_TOMCAT_BASE=/usr/local/tomcat, NVM_CD_FLAGS=, P4PORT=qctp401:1666, NVM_DIR=/usr2/seonkim/.nvm, SHELL=/bin/bash, P4USER=seonkim, SSH_TTY=/dev/pts/10, SSH_CLIENT=10.240.65.175 49771 22, CATALINA_HOME=/usr/local/tomcat, OLDPWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload, USER=seonkim, CLASS_PATH=/usr/lib/jvm/java-11-openjdk-amd64//lib:, SSH_CONNECTION=10.240.65.175 49771 10.240.65.34 22, QT_QPA_PLATFORMTHEME=appmenu-qt5, PYTHONHTTPSVERIFY=0, XDG_RUNTIME_DIR=/run/user/3835720, NVM_BIN=/usr2/seonkim/.nvm/versions/node/v14.16.1/bin, HOME=/usr2/seonkim, SHLVL=1}
+2021-06-08 10:18:46.681+0900 FINE t21 Executor.exec: Executing command [git remote -v] in directory /local2/mnt/opengrok/src/LV.HB.1.1.3-05610-8x96_QX_HYP.0-1/mcm-api with environment: {PATH=/usr/lib/jvm/java-11-openjdk-amd64//bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-11-openjdk-amd64//bin, XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop, JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/, TERM=xterm, LANG=en_US.UTF-8, XDG_SESSION_ID=607, P4CONFIG=.p4config, DISPLAY=localhost:12.0, MAIL=/var/mail/seonkim, LOGNAME=seonkim, PWD=/local2/mnt/opengrok/src/LV.HB.1.1.3-05610-8x96_QX_HYP.0-1/mcm-api, _=/usr/lib/jvm/java-11-openjdk-amd64//bin/java, LANGUAGE=en_US:, OPENGROK_TOMCAT_BASE=/usr/local/tomcat, NVM_CD_FLAGS=, P4PORT=qctp401:1666, NVM_DIR=/usr2/seonkim/.nvm, SHELL=/bin/bash, P4USER=seonkim, SSH_TTY=/dev/pts/10, SSH_CLIENT=10.240.65.175 49771 22, CATALINA_HOME=/usr/local/tomcat, OLDPWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload, USER=seonkim, CLASS_PATH=/usr/lib/jvm/java-11-openjdk-amd64//lib:, SSH_CONNECTION=10.240.65.175 49771 10.240.65.34 22, QT_QPA_PLATFORMTHEME=appmenu-qt5, PYTHONHTTPSVERIFY=0, XDG_RUNTIME_DIR=/run/user/3835720, NVM_BIN=/usr2/seonkim/.nvm/versions/node/v14.16.1/bin, HOME=/usr2/seonkim, SHLVL=1}
+2021-06-08 10:18:46.798+0900 FINE t24 Statistics.logIt: Finished command [git remote -v] in directory /local2/mnt/opengrok/src/LV.HB.1.1.4-08710-8x96.0-1/mcm-api with exit code 0 (took 845 ms)
+2021-06-08 10:18:46.798+0900 FINE t24 Executor.exec: Finished command [git remote -v] in directory /local2/mnt/opengrok/src/LV.HB.1.1.4-08710-8x96.0-1/mcm-api with exit code 0
+2021-06-08 10:18:46.799+0900 FINE t24 Executor.exec: Executing command [git branch] in directory /local2/mnt/opengrok/src/LV.HB.1.1.4-08710-8x96.0-1/mcm-api with environment: {PATH=/usr/lib/jvm/java-11-openjdk-amd64//bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-11-openjdk-amd64//bin, XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop, JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/, TERM=xterm, LANG=en_US.UTF-8, XDG_SESSION_ID=607, P4CONFIG=.p4config, DISPLAY=localhost:12.0, MAIL=/var/mail/seonkim, LOGNAME=seonkim, PWD=/local2/mnt/opengrok/src/LV.HB.1.1.4-08710-8x96.0-1/mcm-api, _=/usr/lib/jvm/java-11-openjdk-amd64//bin/java, LANGUAGE=en_US:, OPENGROK_TOMCAT_BASE=/usr/local/tomcat, NVM_CD_FLAGS=, P4PORT=qctp401:1666, NVM_DIR=/usr2/seonkim/.nvm, SHELL=/bin/bash, P4USER=seonkim, SSH_TTY=/dev/pts/10, SSH_CLIENT=10.240.65.175 49771 22, CATALINA_HOME=/usr/local/tomcat, OLDPWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload, USER=seonkim, CLASS_PATH=/usr/lib/jvm/java-11-openjdk-amd64//lib:, SSH_CONNECTION=10.240.65.175 49771 10.240.65.34 22, QT_QPA_PLATFORMTHEME=appmenu-qt5, PYTHONHTTPSVERIFY=0, XDG_RUNTIME_DIR=/run/user/3835720, NVM_BIN=/usr2/seonkim/.nvm/versions/node/v14.16.1/bin, HOME=/usr2/seonkim, SHLVL=1}
+2021-06-08 10:18:47.028+0900 FINE t24 Statistics.logIt: Finished command [git branch] in directory /local2/mnt/opengrok/src/LV.HB.1.1.4-08710-8x96.0-1/mcm-api with exit code 0 (took 228 ms)
+2021-06-08 10:18:47.028+0900 FINE t24 Executor.exec: Finished command [git branch] in directory /local2/mnt/opengrok/src/LV.HB.1.1.4-08710-8x96.0-1/mcm-api with exit code 0
+2021-06-08 10:18:47.036+0900 FINE t24 Executor.exec: Executing command [git log -1 --pretty=$'%cd#%h %an %s' --date=iso8601-strict] in directory /local2/mnt/opengrok/src/LV.HB.1.1.4-08710-8x96.0-1/mcm-api with environment: {PATH=/usr/lib/jvm/java-11-openjdk-amd64//bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-11-openjdk-amd64//bin, XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop, JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/, TERM=xterm, LANG=en_US.UTF-8, XDG_SESSION_ID=607, P4CONFIG=.p4config, DISPLAY=localhost:12.0, MAIL=/var/mail/seonkim, LOGNAME=seonkim, PWD=/local2/mnt/opengrok/src/LV.HB.1.1.4-08710-8x96.0-1/mcm-api, _=/usr/lib/jvm/java-11-openjdk-amd64//bin/java, LANGUAGE=en_US:, OPENGROK_TOMCAT_BASE=/usr/local/tomcat, NVM_CD_FLAGS=, P4PORT=qctp401:1666, NVM_DIR=/usr2/seonkim/.nvm, SHELL=/bin/bash, P4USER=seonkim, SSH_TTY=/dev/pts/10, SSH_CLIENT=10.240.65.175 49771 22, CATALINA_HOME=/usr/local/tomcat, OLDPWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload, USER=seonkim, CLASS_PATH=/usr/lib/jvm/java-11-openjdk-amd64//lib:, SSH_CONNECTION=10.240.65.175 49771 10.240.65.34 22, QT_QPA_PLATFORMTHEME=appmenu-qt5, PYTHONHTTPSVERIFY=0, XDG_RUNTIME_DIR=/run/user/3835720, NVM_BIN=/usr2/seonkim/.nvm/versions/node/v14.16.1/bin, HOME=/usr2/seonkim, SHLVL=1}
+2021-06-08 10:18:47.491+0900 FINE t21 Statistics.logIt: Finished command [git remote -v] in directory /local2/mnt/opengrok/src/LV.HB.1.1.3-05610-8x96_QX_HYP.0-1/mcm-api with exit code 0 (took 809 ms)
+2021-06-08 10:18:47.491+0900 FINE t21 Executor.exec: Finished command [git remote -v] in directory /local2/mnt/opengrok/src/LV.HB.1.1.3-05610-8x96_QX_HYP.0-1/mcm-api with exit code 0
+2021-06-08 10:18:47.492+0900 FINE t21 Executor.exec: Executing command [git branch] in directory /local2/mnt/opengrok/src/LV.HB.1.1.3-05610-8x96_QX_HYP.0-1/mcm-api with environment: {PATH=/usr/lib/jvm/java-11-openjdk-amd64//bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-11-openjdk-amd64//bin, XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop, JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/, TERM=xterm, LANG=en_US.UTF-8, XDG_SESSION_ID=607, P4CONFIG=.p4config, DISPLAY=localhost:12.0, MAIL=/var/mail/seonkim, LOGNAME=seonkim, PWD=/local2/mnt/opengrok/src/LV.HB.1.1.3-05610-8x96_QX_HYP.0-1/mcm-api, _=/usr/lib/jvm/java-11-openjdk-amd64//bin/java, LANGUAGE=en_US:, OPENGROK_TOMCAT_BASE=/usr/local/tomcat, NVM_CD_FLAGS=, P4PORT=qctp401:1666, NVM_DIR=/usr2/seonkim/.nvm, SHELL=/bin/bash, P4USER=seonkim, SSH_TTY=/dev/pts/10, SSH_CLIENT=10.240.65.175 49771 22, CATALINA_HOME=/usr/local/tomcat, OLDPWD=/local2/mnt/qct_auto_programs/opengrok_auto_upload, USER=seonkim, CLASS_PATH=/usr/lib/jvm/java-11-openjdk-amd64//lib:, SSH_CONNECTION=10.240.65.175 49771 10.240.65.34 22, QT_QPA_PLATFORMTHEME=appmenu-qt5, PYTHONHTTPSVERIFY=0, XDG_RUNTIME_DIR=/run/user/3835720, NVM_BIN=/usr2/seonkim/.nvm/versions/node/v14.16.1/bin, HOME=/usr2/seonkim, SHLVL=1}

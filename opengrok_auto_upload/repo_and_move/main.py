@@ -7,7 +7,7 @@ if __name__ == '__main__' :
 		print 'Usage : python main.py start | stop | restart'
 		exit(1)
 	
-	daemon = Daemon('/var/log/opengrok_auto/auto_repo.pid')
+	daemon = Daemon('/var/log/auto_repo/auto_repo.pid')
 	if sys.argv[1] == 'start':
 		daemon.start()
 	elif sys.argv[1] == 'stop':

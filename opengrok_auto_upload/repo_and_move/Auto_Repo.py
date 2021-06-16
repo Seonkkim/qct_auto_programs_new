@@ -9,20 +9,22 @@ from datetime import datetime
 from dateutil.tz import tzlocal
 import requests, yaml, json
 
-META_WATCH = '/local2/mnt/workspace/watch'
-META_BUILD = '/local2/mnt/workspace/META_BUILD'
+META_WATCH = '/local2/mnt/watch'
+META_BUILD = '/local2/mnt/META_BUILD'
 
 GROK_LIST = META_WATCH + '/watch_list.txt'
-SRC_TEMP_PATH = '/local2/mnt/workspace/charlie/opengrok_temp'
+SRC_TEMP_PATH = '/local2/mnt/opengrok_tmp'
 
-OPENGROK = '/var/opengrok'
+OPENGROK = '/local2/mnt/opengrok'
 #OPENGROK_SRC = '/local2/mnt/workspace/charlie/opengrok_temp'
-P4_SCRIPT = '/local2/mnt/workspace/charlie/scripts/opengrok_auto_upload/repo_and_move/p4_script.sh'
+P4_SCRIPT = '/local2/mnt/qct_auto_programs/p4_script.sh'
 DB_URL = "https://automotive-linux:9999/db/"
 
 AUTO_REPO_LOG=META_WATCH+'/auto_repo.log'
-START_TIME = 2
-END_TIME = 3
+#START_TIME = 00
+#END_TIME = 01
+START_TIME = 22
+END_TIME = 23
 class Auto_Repo:
     def __init__(self, log_file=AUTO_REPO_LOG):
         self.log_file = log_file
@@ -41,7 +43,19 @@ class Auto_Repo:
         #        if sp + '-' in build:
         #            build_list.append(build)
         #            #dirs.remove(build)
-        response = requests.get(DB_URL+'sp/', headers={"Content-Type": "application/json"}, verify=False)
+
+        while True:
+            try:
+                response = requests.get(DB_URL+'sp/', headers={"Content-Type": "application/json"}, verify=False)
+                break
+            except:
+                print("Connection refused by the server..")
+                print("Let me sleep for 5 seconds")
+                print("ZZzzzz...")
+                time.sleep(5)
+                print("Was a nice sleep, now let me continue...")
+                continue
+
         sp_list = response.json()
         for sp in sp_list:
             sp = yaml.safe_load(json.dumps(sp))
@@ -92,7 +106,7 @@ class Auto_Repo:
     def __repo_init_and_sync(self, apps_id, au_tag):
         try:
             if 'LA' in apps_id or 'LE' in apps_id:
-                    src = '/src_2/'
+                    src = '/src/'
             else:
                     src = '/src/'
             if(os.path.isdir(OPENGROK + src + apps_id)):
@@ -134,11 +148,11 @@ class Auto_Repo:
             repo_sync = '/usr/bin/repo sync -c --no-tags -j8'
             if not au_tag == '':
                 if 'LV' in au_tag or 'LE.UM' in au_tag:
-                    repo_command = '/usr/bin/repo init -u git://git.quicinc.com/le/manifest.git -b refs/tags/' + au_tag + ' -m versioned.xml'
+                    repo_command = '/usr/bin/repo init -u git://git.quicinc.com/le/manifest.git -b refs/tags/' + au_tag + ' -m versioned.xml --repo-url=git://git.quicinc.com/tools/repo.git --repo-branch=qc/stable'
                 elif 'LA' in au_tag:
-                    repo_command = '/usr/bin/repo init -u git://git.quicinc.com/platform/manifest.git -b refs/tags/' + au_tag + ' -m versioned.xml'
+                    repo_command = '/usr/bin/repo init -u git://git.quicinc.com/platform/manifest.git -b refs/tags/' + au_tag + ' -m versioned.xml --repo-url=git://git.quicinc.com/tools/repo.git --repo-branch=qc/stable'
                 elif 'LE' in au_tag:
-                    repo_command = '/usr/bin/repo init -u git://git.quicinc.com/mdm/manifest.git -b refs/tags/' + au_tag + ' -m versioned.xml'
+                    repo_command = '/usr/bin/repo init -u git://git.quicinc.com/mdm/manifest.git -b refs/tags/' + au_tag + ' -m versioned.xml --repo-url=git://git.quicinc.com/tools/repo.git --repo-branch=qc/stable'
             else:
                 #print('Unknown AU TAG')
                 self.logger.log('repo_init_and_sync', {
@@ -240,7 +254,7 @@ class Auto_Repo:
                 if 'LV.' in build or 'QX.' in build:
                     dst_full_path = os.path.join(OPENGROK+'/src', apps_id)
                 elif 'LA.' in build or 'LE.' in build:
-                    dst_full_path = os.path.join(OPENGROK+'/src_2', apps_id)
+                    dst_full_path = os.path.join(OPENGROK+'/src', apps_id)
                 if os.path.isdir(dst_full_path):
                     continue
                 #print 'src full path: ', src_full_path
@@ -276,7 +290,7 @@ class Auto_Repo:
                 if 'LV.' in gvm_id:
                     dst_full_path = os.path.join(OPENGROK+'/src', gvm_id)
                 elif 'LA.' in gvm_id:
-                    dst_full_path = os.path.join(OPENGROK+'/src_2', gvm_id)
+                    dst_full_path = os.path.join(OPENGROK+'/src', gvm_id)
                 if os.path.isdir(dst_full_path):
                     continue
                 self.logger.log('chmod_and_move', {
@@ -301,8 +315,8 @@ class Auto_Repo:
         while not self.__stop and not os.path.isfile('/var/log/auto_repo/auto_repo.log'):
             now_hour = datetime.now(tz=self.tz).hour
             if now_hour == START_TIME or now_hour == END_TIME:
-                self.logger.log('message', 'It\'s time to start')
-                self.work()
+       		self.logger.log('message', 'It\'s time to start')
+       		self.work()
             time.sleep(600)
         self.logger.log('stop', {
             'pid': os.getpid()
