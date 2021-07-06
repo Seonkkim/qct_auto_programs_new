@@ -19,7 +19,7 @@ from dateutil.tz import tzlocal
 import requests, yaml, json
 
 CUR_PATH='/local2/mnt'
-FINDBUILD='/prj/qct/asw/qctss/linux/bin//FindBuild'
+FINDBUILD='/prj/qct/asw/qctss/linux/ubuntu/14.04/bin/FindBuild'
 PREFIX='/prj/qct/asw/crmbuilds'
 OPENGROK_SRC = 'local2/mnt/opengrok/src'
 BUILD_PATH='common/build'
